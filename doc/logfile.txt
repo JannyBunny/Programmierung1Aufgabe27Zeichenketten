@@ -1,0 +1,43 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;\\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten
+-d
+\\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc
+-encoding
+windows-1252
+-charset
+windows-1252
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+\\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\StringBearbeitung.java
+<---- end of javadoc command ---->
+Loading source file \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\StringBearbeitung.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_60
+Building tree for all the packages and classes...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\StringBearbeitung.html...
+\\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\StringBearbeitung.java:120: warning - @param argument "gibt" is not a parameter name.
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\package-frame.html...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\package-summary.html...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\allclasses-frame.html...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\allclasses-noframe.html...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\index.html...
+Generating \\QNAPJG\uni\onedrive\BlueJProjekte\Kapitel 5\Zeichenketten\doc\stylesheet.css...
+1 warning
