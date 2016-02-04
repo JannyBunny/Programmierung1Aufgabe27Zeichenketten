@@ -16,7 +16,7 @@ public class StringBearbeitungTest {
     @Before
     public void setUp() throws Exception {
         
-        normal = new StringBearbeitung("Zu wissen, was man weiÃŸ, und zu wissen, was man tut, das ist Wissen.");
+        normal = new StringBearbeitung("Zu wissen, was man weiß, und zu wissen, was man tut, das ist Wissen.");
         konfus = new StringBearbeitung("Ababababaa");
         kurz = new StringBearbeitung("Programmieren ist toll!");
         lax = new StringBearbeitung(" Fischers Fritze fischt frische Fische ");
@@ -42,7 +42,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * Testet die LÃ¤nge des Strings
+     * Testet die Länge des Strings
      */
     @Test
     public void test_gibLaenge()
@@ -78,12 +78,12 @@ public class StringBearbeitungTest {
         String lowerCase = kurz.inKleinbuchstabenWandeln();
         assertEquals("programmieren ist toll!",lowerCase);
         
-        //Testet, ob die Originalzeichenkette verÃ¤ndert wurde - Darf nicht sein
+        //Testet, ob die Originalzeichenkette verändert wurde - Darf nicht sein
         assertTrue( kurz.istGleich("Programmieren ist toll!"));
     }
     
     /**
-     * PrÃ¼ft BeginntMit Methode auf true
+     * Prüft BeginntMit Methode auf true
      */
     @Test
     public void test_beginntMitTrue()
@@ -92,7 +92,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * PrÃ¼ft BeginntMit Methode auf false
+     * Prüft BeginntMit Methode auf false
      */
     @Test
     public void test_beginntMitFalse()
@@ -101,7 +101,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * PrÃ¼ft Anfang und Ende bereinigen
+     * Prüft Anfang und Ende bereinigen
      */
     public void test_anfangUndEndeBereinigen1()
     {
@@ -116,7 +116,7 @@ public class StringBearbeitungTest {
     
     /**
      * Tests die Anfang und Ende Bereinigen Methode mit
-     * Ãœbergabeparameter
+     * Übergabeparameter
      */
     @Test
     public void test_anfangUndEndeBereinigen2()
@@ -129,7 +129,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * Testet EnthÃ¤lt-Methode, ob ein enthaltenes
+     * Testet Enthält-Methode, ob ein enthaltenes
      * Wort erkannt wird
      */
     @Test
@@ -139,7 +139,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * Testet EnthÃ¤lt-Methode, ob ein nicht enthaltenes Wort
+     * Testet Enthält-Methode, ob ein nicht enthaltenes Wort
      * false ergibt
      */
     @Test
@@ -178,12 +178,12 @@ public class StringBearbeitungTest {
         }
         catch(StringIndexOutOfBoundsException e)
         {
-            fail("Es wurde versucht die gibAnfang-Methode mit dem Index ausserhalb der gÃ¼ltigen Laenge aufzurufen!");
+            fail("Es wurde versucht die gibAnfang-Methode mit dem Index ausserhalb der gültigen Laenge aufzurufen!");
         }
     }
     
     /**
-     * Test, ob gib Anfang Methode den korrekten Substring zurÃ¼ckgibt
+     * Test, ob gib Anfang Methode den korrekten Substring zurückgibt
      */
     @Test
     public void test_gibAnfangTrue()
@@ -194,7 +194,7 @@ public class StringBearbeitungTest {
         
         int compareLength = lax.gibLaenge();
         
-        //Testet, ob die eigentliche Zeichenkette durch die gibAnfang nicht verÃ¤ndert wurde
+        //Testet, ob die eigentliche Zeichenkette durch die gibAnfang nicht verändert wurde
         assertEquals(oldLength, compareLength, 0);
 
     }
@@ -209,7 +209,7 @@ public class StringBearbeitungTest {
             normal.gibAnfang(-1);
         }catch(StringIndexOutOfBoundsException e)
         {
-            fail("Es wurde versucht einen negativen Index fÃ¼r die gibAnfang-Methode einzugeben");
+            fail("Es wurde versucht einen negativen Index für die gibAnfang-Methode einzugeben");
         }
     }
     
@@ -245,12 +245,12 @@ public class StringBearbeitungTest {
         
         String neueZeichenkette = kurz.verkette(zuVerketten);
         
-        //PrÃ¼ft, ob sich die Laenge nach Verkettung entsprechend angepasst hat
+        //Prüft, ob sich die Laenge nach Verkettung entsprechend angepasst hat
         assertEquals(originalLength+zuVerketten.length(), neueZeichenkette.length());
         
         int newLength = kurz.gibLaenge();
 
-        //PrÃ¼ft, ob der original String durch die Verkettung nicht verÃ¤ndert wurde
+        //Prüft, ob der original String durch die Verkettung nicht verändert wurde
         
         assertEquals(originalLength, newLength,0);
         
@@ -258,23 +258,23 @@ public class StringBearbeitungTest {
     
     
     /**
-     * Testet, die Verkette Methode mit Ãœbergabeparametern
+     * Testet, die Verkette Methode mit Übergabeparametern
      */
     @Test
     public void test_verketteMitParametern()
     {
-        String vergleich = new String ("Die Wiese ist grÃ¼n. Es ist bald FrÃ¼hling");
-        String outputString = leer.verkette("Die Wiese ist grÃ¼n. ","Es ist bald FrÃ¼hling");
+        String vergleich = new String ("Die Wiese ist grün. Es ist bald Frühling");
+        String outputString = leer.verkette("Die Wiese ist grün. ","Es ist bald Frühling");
         
         assertEquals(vergleich,outputString );
-        //PrÃ¼ft, ob der Original-String hierbei unverÃ¤ndert bleibt
+        //Prüft, ob der Original-String hierbei unverändert bleibt
         assertEquals(0,leer.gibLaenge());
         
         
     }
     
     /**
-     * Testet, ob erfolgreich der Index fÃ¼r eine Teilkette gefunden wird
+     * Testet, ob erfolgreich der Index für eine Teilkette gefunden wird
      */
     @Test
     public void test_findeTeilkette()
@@ -342,7 +342,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * Testet, ob unabhÃ¤ngig der Gross- und Kleinschreibung die korrekte
+     * Testet, ob unabhängig der Gross- und Kleinschreibung die korrekte
      * Anzahl der Worte gefunden wird
      */
     @Test
@@ -352,7 +352,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * Testet, ob unabhÃ¤ngig der Gross- und Kleinschreibung bei einem nicht 
+     * Testet, ob unabhängig der Gross- und Kleinschreibung bei einem nicht 
      * existenten Wort eine Anzahl von 0 gefunden wird.
      */
     @Test
@@ -362,7 +362,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * PrÃ¼ft ob bei korrekter Eingabe der Host zurÃ¼ckgegeben wird
+     * Prüft ob bei korrekter Eingabe der Host zurückgegeben wird
      */
     @Test
     public void test_gibHost()
@@ -373,7 +373,7 @@ public class StringBearbeitungTest {
     }
     
     /**
-     * PrÃ¼ft, ob bei doppelter @ Eingabe der korrekte Host zurÃ¼ckgegeben wird
+     * Prüft, ob bei doppelter @ Eingabe der korrekte Host zurückgegeben wird
      */
     @Test
     public void test_gibHostMitZweiATZeichen()

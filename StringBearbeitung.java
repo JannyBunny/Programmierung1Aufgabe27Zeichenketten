@@ -109,7 +109,7 @@ public class StringBearbeitung
      */    
      public boolean enthaelt(String wort)
      {
-         return zeichenkette.contentEquals(wort);
+         return zeichenkette.contains(wort);
      }
 
     /**
@@ -119,7 +119,7 @@ public class StringBearbeitung
      */    
      public boolean istLeer()
      {
-         return zeichenkette.length() < 0;
+         return zeichenkette.length() <= 0;
      }
 
     /**
@@ -129,7 +129,10 @@ public class StringBearbeitung
      */
      public String gibAnfang(int anzahl)
      {
-         return zeichenkette.substring(anzahl);
+         if ( (anzahl >= 0) && (anzahl<=zeichenkette.length()) ) {
+         return zeichenkette.substring(0,anzahl);
+        }
+        return "Falscher Anfang";
      }
 
     /**
@@ -208,9 +211,9 @@ public class StringBearbeitung
      public int anzahlVorkommen(String teilkette)
      {
          int anzahl=0;
-         String zeichenkettenArray[] = zeichenkette.split(" ");
+         String zeichenkettenArray[] = zeichenkette.split("[!?;:,. ]");
          for (String word: zeichenkettenArray) {
-             if (word.trim().equalsIgnoreCase(teilkette)) {
+             if (word.trim().toLowerCase().contains(teilkette.toLowerCase())) {
                  anzahl++;
                 }
             }
@@ -226,7 +229,7 @@ public class StringBearbeitung
      */
      public String gibHost(String eMailAdresse)
      {
-         return eMailAdresse.substring(eMailAdresse.indexOf("@")+1);
+         return eMailAdresse.substring(eMailAdresse.lastIndexOf("@")+1);
      }
 
 }
