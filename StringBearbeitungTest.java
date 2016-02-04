@@ -1,9 +1,18 @@
-import static org.junit.Assert.*;
+/**
+ * Die Klasse StringBearbeitung enthaelt einige Methoden, die
+ * den Umgang mit Zeichenketten zeigen.
+ * 
+ * @author HHPaul 
+ * @version (16/01)
+ */
+public class StringBearbeitung
+{
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+    // Datenfeld: Diee Zeichenkette, die untersucht wird. 
+    // (In der folgenden Doku 'diese Zeichenkette'.)
+    private String zeichenkette;
 
+<<<<<<< HEAD
 public class StringBearbeitungTest {
     
     private StringBearbeitung normal;
@@ -30,48 +39,57 @@ public class StringBearbeitungTest {
 
     
     @Test
+=======
+>>>>>>> origin/master
     /**
-     * Test, ob die Zeichenkette auf der Consolenausgabe erscheint
-     */
-    public void test_zeigeZeichenkette()
+     * Der parameterlose Konstruktor. Initialisiert dies Zeichenkette mit willkuerlicher Zeichenkette
+     */ 
+    public StringBearbeitung()
     {
-        System.out.println("Test der Ausgabe-Methode - Konfuzius sagt:");
-        normal.zeigeZeichenkette();
-        System.out.println("");
-        
+    // Eine Zeichenkette fuer alle Faelle
+        zeichenkette = new String("In Ulm um Ulm und um Ulm herum." );
     }
     
     /**
+<<<<<<< HEAD
      * Testet die L�nge des Strings
+=======
+     * Kopierkonstruktor; initialisiert diese Zeichenkette mit der uebergebenen Zeichenkette.
+     * @param zeichenkette Eingabe der Zeichenkette, mit welcher gearbeitet werden soll.
+>>>>>>> origin/master
      */
-    @Test
-    public void test_gibLaenge()
+    public StringBearbeitung(String zeichenkette)
     {
-        assertEquals(68,normal.gibLaenge(),0);
+        this.zeichenkette = new String(zeichenkette);
+    } 
+    
+    /**
+     * Gibt diese Zeichenkette aus.
+     */
+    public void zeigeZeichenkette() 
+    {
+        if (zeichenkette.length() > 0) {
+            System.out.println(zeichenkette);
+        }
     }
     
     /**
-     * Testet die istGleich Funktion
+     * Ermittelt die Laenge dieser Zeichenkette.
+     * @return Länge der Zeichenkette in ganzen Zahlen.
      */
-    @Test
-    public void test_istGleichTrue()
-    {
-        String kurz2 = new String("Programmieren ist toll!");
-        assertTrue( kurz.istGleich(kurz2));
-    }
+     public int gibLaenge()
+     {
+         return zeichenkette.length();
+     }
     
     /**
-     * Testet die istGleich Funktion
+     *  Vergleicht diese Zeichenkette mit anderer Zeichenkette. (2 Zeichenketten werden als 
+     *  gleich verstanden, wenn Sie den gleichen Inhalt haben und nicht nur, wenn die auf sie
+     *  verweisenden Referenzen gleich sind.)
+     *  @param andereZeichenkette Eingabe einer Zeichenkette, mit der verglichen werden soll.
+     *  @return ist die Zeichenkette gleich? True, wenn ja.
      */
-    @Test
-    public void test_istGleichFalse()
-    {
-        assertFalse( kurz.istGleich("PRogrammieren is toll"));
-    }
-    
-    /**
-     * Testet KleinBuchstaben-Umwandlung
-     */
+<<<<<<< HEAD
     @Test
     public void test_inKleinBuchstabenUmwandeln()
     {
@@ -84,14 +102,26 @@ public class StringBearbeitungTest {
     
     /**
      * Pr�ft BeginntMit Methode auf true
+=======
+     public boolean istGleich(String andereZeichenkette)
+     {
+         return zeichenkette.equals(andereZeichenkette);
+     }
+       
+    /**
+     * Erzeugt Zeichenkette, bei der alle Grossbuchstaben dieser Zeichenkette in Kleinbuchstaben 
+     * gewandelt wurden und gibt die gewandelte Zeichenkette zurueck.
+     * @return die in Kleinbuchstaben umgewandelte Zeichenkette.
+>>>>>>> origin/master
      */
-    @Test
-    public void test_beginntMitTrue()
-    {
-        assertTrue( konfus.beginntMit("Abab"));
-    }
+     public String inKleinbuchstabenWandeln() 
+     {   
+         String zeichenkette2 = zeichenkette.toLowerCase(); 
+         return zeichenkette2;
+     }    
     
     /**
+<<<<<<< HEAD
      * Pr�ft BeginntMit Methode auf false
      */
     @Test
@@ -102,12 +132,26 @@ public class StringBearbeitungTest {
     
     /**
      * Pr�ft Anfang und Ende bereinigen
+=======
+     * Prueft, ob diese Zeichenkette mit der uebergebenen Zeichenkette beginnt.
+     * @param startKette Eingabe der Zeichenkette mit mit der geprüft werden soll.
+     * @return Wenn die Zeichenkette mit der eingegeben überinstimmt, true, sonst false.
+     */   
+     public boolean beginntMit(String startKette)
+     {
+         return zeichenkette.startsWith(startKette);
+     }
+    
+    /**
+     * Entfernt fuehrende und abschliessende Leerzeichen dieser Zeichenkette, sofern vorhanden.
+>>>>>>> origin/master
      */
-    public void test_anfangUndEndeBereinigen1()
-    {
-        int initLength = lax.gibLaenge();
-        lax.AnfangUndEndeBereinigen();
+     public void AnfangUndEndeBereinigen()
+     {
+         zeichenkette = zeichenkette.trim();
+     }
 
+<<<<<<< HEAD
         int newLength = lax.gibLaenge();
         
         assertEquals(newLength, initLength-2,0);
@@ -167,9 +211,15 @@ public class StringBearbeitungTest {
         assertFalse( normal.istLeer());
     }
     
+=======
+>>>>>>> origin/master
     /**
-     * Tests, ob gibAnfang auf einen leeren String angewendet werden kann
+     * Entfernt fuehrende und abschliessende Leerzeichen der uebergebenen Zeichenkette, 
+     * sofern vorhanden. Das Ergebnis wird zurueckgegeben.
+     * @param kette Zeichenkette, welche der Leerzeichen beraubt werden soll.
+     * @return Rückgabe der von Leerzeichen bereinigten Zeichenkette
      */
+<<<<<<< HEAD
     @Test
     public void test_gibAnfangLeer()
     {
@@ -196,12 +246,40 @@ public class StringBearbeitungTest {
         
         //Testet, ob die eigentliche Zeichenkette durch die gibAnfang nicht ver�ndert wurde
         assertEquals(oldLength, compareLength, 0);
+=======
+     public String AnfangUndEndeBereinigen(String kette)
+     {
+         return kette.trim();
+     } 
 
-    }
-    
+   /**
+     * Prueft, ob das uebergebene Wort in der Kette enthalten ist. Gibt true zurueck,
+     * falls das Wort enthalten ist, false sonst.
+     *@param wort Wort, welches in der Zeichenkette enthalten sein soll. 
+     *@return gibt true, wenn das eingegebene Wort in der Zeichenkette enthalten ist, ansonsten false.
+     */    
+     public boolean enthaelt(String wort)
+     {
+         return zeichenkette.contains(wort);
+     }
+
     /**
-     * Testet, ob negative Indizes abgefangen werden
+     * Prueft, ob diese Zeichenkette leer ist, also keine Zeichen enthaelt. Gibt true zurueck,
+     * falls die Zeichenkette keine Zeichen enthaelt, false sonst.
+     * @param gibt true, wenn die Zeichenkette leer ist.
+     */    
+     public boolean istLeer()
+     {
+         return zeichenkette.length() <= 0;
+     }
+>>>>>>> origin/master
+
+    /**
+     * Gibt die Zeichenkette zurueck, die die ersten 'anzahl' Zeichen dieser Zeichenkette enthaelt.
+     *@param anzahl Anzahl der Zeichenkette welche zurückgegeben werden soll.
+     *@return gibt die ersten der in anzahl übergebenen Zeichen der Zeichenkette zurück.
      */
+<<<<<<< HEAD
     @Test
     public void test_gibAnfangNegativerIndex()
     {
@@ -284,73 +362,64 @@ public class StringBearbeitungTest {
         assertEquals(1,index,0);
     }
     
-    /**
-     * Testet, ob erfolgreich keine Teilkette gefunden wird
-     */
-    @Test
-    public void test_findeTeilketteLeer()
-    {
-        int index = leer.findeTeilkette("Wiese");
-        
-        assertEquals(-1, index);
-    }
-    
-    /**
-     * Testet, ob die lexikographische Reihenfolge-Methode das entsprechende Resultat liefert
-     */
-    @Test
-    public void test_lexikographischeReihenfolgeLeer()
-    {
-        String[] result = leer.inLexikografischerReihenfolge("Die Wiese ist gruen ", "Die Baeume sind gruen ");
-        
-        String output="";
-        
-        for(String entry : result)
-        {
-            output+=entry;
+=======
+     public String gibAnfang(int anzahl)
+     {
+         if ( (anzahl >= 0) && (anzahl<=zeichenkette.length()) ) {
+         return zeichenkette.substring(0,anzahl);
         }
-        
-        String vergleich = new String("Die Baeume sind gruen Die Wiese ist gruen ");
-        
-        assertEquals(vergleich,output);
-        
-    }
-    
-    
+        return "Falscher Anfang";
+     }
+
+>>>>>>> origin/master
     /**
-     * Testet, ob prinzipielle die lexikographische Reihenfolge beachtet wurde
+     * Gibt die Position des ersten Leerzeichens dieser Zeichenkette zurueck.
+     * @return gibt Position des ersten leerzeichens zurück 0 basierte Zählweise.
+     */ 
+     public int erstesLeerzeichen()
+     {
+         return zeichenkette.indexOf(" ");
+     }
+
+    /**
+     * Verkettet diese Zeichenkette mit der uebergebenen Zeichenkette 'andereKette' und gibt 
+     * das Ergebnis zurueck.
+     * @param andereKette unsere Zeichenkette wird hiermit verkettet.
+     * @return Rückgabe der verketten Zeichenketten.
      */
-    @Test
-    public void test_lexikographischeReihenfolge()
-    {
-        String str1 = "Die Wiese ist gruen ";
-        String str2 = "Die Baeume sind gruen ";
-        String[] result = leer.inLexikografischerReihenfolge(str1, str2);
-        
-        assertEquals(str2,result[0]);
-        assertEquals(str1,result[1]);
-    }
-    
-    @Test
-    public void test_lexikographischeReihenfolge2()
-    {
-        String str1 = "Ababab ";
-        String str2 = "ababab ";
-        String[] result = leer.inLexikografischerReihenfolge(str1, str2);
-        assertEquals(str1,result[0]);
-        assertEquals(str2,result[1]);
-    }
+     public String verkette(String andereKette)
+     {
+         return zeichenkette + andereKette;         
+     }
     
     /**
+     * Verkettet 2 uebergebene Zeichenketten und gibt das Ergebnis zurueck.
+     * @param zKette1 erste Zeichenkette
+     * @param zKette2 zweite Zeichenkette
+     * @return gibt das ergebnis der beiden verketteten Zeichenketten zurück.
+     */
+     public String verkette(String zKette1, String zKette2)
+     {
+         return zKette1+zKette2;
+     } 
+
+    /**
+<<<<<<< HEAD
      * Testet, ob unabh�ngig der Gross- und Kleinschreibung die korrekte
      * Anzahl der Worte gefunden wird
+=======
+     * Prueft, ob das uebergebene Wort in dieser Zeichenkette enthalten ist und gibt den
+     * Index des ersten Zeichens zurueck, bei dem der uebereinstimmende Bereich beginnt.
+     * @param wort prüft ob das wort in der Zeichenkette enthalten ist und gibt den Index zurück.
+     * @return gibt den index des ersten Zeichens zurück bei dem der uebereinstimmende Bereich beginnt.
+>>>>>>> origin/master
      */
-    @Test
-    public void test_anzahlVorkommen()
-    {
-        assertEquals(3,lax.anzahlVorkommen("fisch"),0);
-    }
+     public int findeTeilkette(String wort)
+     {
+         return zeichenkette.indexOf(wort);
+     }
     
+<<<<<<< HEAD
     /**
      * Testet, ob unabh�ngig der Gross- und Kleinschreibung bei einem nicht 
      * existenten Wort eine Anzahl von 0 gefunden wird.
@@ -388,5 +457,61 @@ public class StringBearbeitungTest {
     
     
     
+=======
+
+    
+    /**
+     * Vergleicht die beiden uebergebenen Zeichenketten. Gibt ein String-Array zurueck, 
+     * das die beiden Zeichenketten in lexikografischer Reihenfolge enthaelt. (Die im 
+     * Lexikon weiter vorne stehende Zeichenkette soll auch im Array vorne stehen)
+     * @param zKette1 Erste Zeichenkette.
+     * @param zKette2 Zweite Zeichenkette.
+     * @return Array der Strings in in lexikografischer Reihenfolge.
+     */
+     public String [] inLexikografischerReihenfolge(String zKette1, String zKette2)
+     {
+         String [] zk = new String[2];
+         if (zKette1.compareTo(zKette2) < 0 ) {
+            zk[0] = zKette1;
+            zk[1] = zKette2;
+            }
+         if (zKette1.compareTo(zKette2) > 0 ) {
+            zk[0] = zKette2;
+            zk[1] = zKette1;
+            }
+         return zk;
+     }
+
+    /**
+     * Prueft, wie oft eine uebergebene Zeichenkette in dieser Zeichenkette
+     * enthalten ist. Dabei soll Gross-/Kleinschreibung nicht unterschieden werden. Gibt
+     * zurueck, wie oft die Teilkette in dieser Zeichenkette enthaten ist.
+     * @param teilkette Welche gegen die zeichenkette geprüft werden soll.
+     * @return Anzahl der vorkommen der Übergebenen teilkette in der Zeichenkette.
+     */
+     public int anzahlVorkommen(String teilkette)
+     {
+         int anzahl=0;
+         String zeichenkettenArray[] = zeichenkette.split("[!?;:,. ]");
+         for (String word: zeichenkettenArray) {
+             if (word.trim().toLowerCase().contains(teilkette.toLowerCase())) {
+                 anzahl++;
+                }
+            }
+         return anzahl;         
+     }
+    
+    /**
+     * Findet den Hostnamen in einer uebergebenen Zeichenkette, welche eine Email-Adresse enthaelt.
+     * Die Email-Adresse soll das Format "benutzername@hostname" haben. Der Hostname soll als
+     * Zeichenkette zurueckgegeben werden.
+     * @param eMailAdresse Übergebene Emailadresse zum hostnamen Suchen.
+     * @return Gibt den gefundenen Hostnamen zurück.
+     */
+     public String gibHost(String eMailAdresse)
+     {
+         return eMailAdresse.substring(eMailAdresse.lastIndexOf("@")+1);
+     }
+>>>>>>> origin/master
 
 }
